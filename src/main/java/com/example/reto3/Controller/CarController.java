@@ -36,16 +36,16 @@ public class CarController {
     }
 
 
-//    @PutMapping("/update")
-//    @ResponseStatus(HttpStatus.CREATED)
-//    public Car update(RequestBody Car car){
-//        return carService.update(car);
-//    }
-//
-//    @DeleteMapping("/{id}")
-//    @ResponseStatus(HttpStatus.NO_CONTENT)
-//    public boolean delete(@PathVariable int id){
-//        return carService.delete(id);
-//    }
+   @PutMapping("/update")
+   @ResponseStatus(HttpStatus.CREATED)
+   public Car update(@RequestBody Car car){
+        return carService.update(car);
+   }
+
+  @DeleteMapping("/{id}")
+  @ResponseStatus(HttpStatus.NO_CONTENT)
+  public boolean delete(@PathVariable int id){
+        return carService.delete(id);
+   }
 
 }

@@ -1,5 +1,6 @@
 package com.example.reto3.Controller;
 
+import com.example.reto3.Model.Reservation;
 import com.example.reto3.Model.Score;
 import com.example.reto3.Service.ScoreService;
 import org.springframework.http.HttpStatus;
@@ -12,6 +13,7 @@ import java.util.Optional;
 @CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 @RestController
 @RequestMapping("/api/Score")
+
 public class ScoreController {
     @Autowired
     private ScoreService scoreService;
@@ -27,23 +29,18 @@ public class ScoreController {
 
     }
 
-    @PostMapping("/save")
+    @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
-    public Score save(@RequestBody Score score){
-        return scoreService.save(score);
+    public Score update(@RequestBody Score score){
+        return scoreService.update(score);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable int id){
+        return scoreService.delete(id);
     }
 
 
-    //    @PutMapping("/update")
-//    @ResponseStatus(HttpStatus.CREATED)
-//    public Score update(RequestBody Score score){
-//        return score Service.update(car);
-//    }
-//
-//    @DeleteMapping("/{id}")
-//    @ResponseStatus(HttpStatus.NO_CONTENT)
-//    public boolean delete(@PathVariable int id){
-//        return scoreService.delete(id);
-//    }
 
 }

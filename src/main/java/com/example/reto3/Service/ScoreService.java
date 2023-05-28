@@ -43,6 +43,7 @@ public class ScoreService {
                 if(score.getStars() !=null){
                     scoreEncontrado.get().setStars(score.getStars());
                 }
+
                 return scoreRepository.save(scoreEncontrado.get());
             }else{
                 return score;

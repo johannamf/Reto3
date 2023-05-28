@@ -2,8 +2,9 @@ package com.example.reto3.Model;
 import com.example.reto3.Model.Gama;
 import com.example.reto3.Service.GamaService;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import jakarta.persistence.*;
+import javax.persistence.*;
 
+import javax.persistence.Entity;
 import java.util.List;
 
 @Entity

@@ -2,11 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Reto 3</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="webjars/bootstrap/js/bootstrap.min.js"></script>
+    <title>Carros</title>
 </head>
 <body>
-    <h1>Hola esto es el front de mi proyecto</h1>
-
-
+    <h1>Bienvenido a carros </h1>
+    <br>
+    <div class="container unauthenticated">
+         Para iniciar sesion haz click <a href="/oauth2/authorization/github">Aqui</a>
+    </div>
+    <br>
+    <div class="conatiner authenticated" style="display: none"></div>
+         Has sido autenticado: <span id="usuario"></span>
+         <button onclick="location.href= 'homePage.html' ; ">Continuar</button>
+    </div>
 </body>
+<script type="text/javascript">
+    $.get("/user", function (data){
+        $("#usuario") .html(data.name);
+        $(".unauthenticated") .hide();
+        $(".authenticated") .show();
+        });
+</script>
+
 </html>

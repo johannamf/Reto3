@@ -29,21 +29,20 @@ public class MessageController {
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Message save(@RequestBody Message message){
+    public Message save(@RequestBody Message message) {
         return messageService.save(message);
-
-
-        //    @PutMapping("/update")
-//    @ResponseStatus(HttpStatus.CREATED)
-//    public Message update(RequestBody Message message){
-//        return messageService.update(message);
-//    }
-//
-//    @DeleteMapping("/{id}")
-//    @ResponseStatus(HttpStatus.NO_CONTENT)
-//    public boolean delete(@PathVariable int id){
-//        return messageService.delete(id);
-//    }
     }
 
+
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Message update(@RequestBody Message message){
+        return messageService.update(message);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+   public boolean delete(@PathVariable int id){
+        return messageService.delete(id);
+    }
 }
